@@ -22,18 +22,31 @@ for x in test:
 ###########################################################
 
 
-# TO-DO:  implement the Bubble Sort function below
+# Bubble Sort function ####################################
 def bubble_sort( arr ):
-    for i in range(1, len(arr)):
-        j = i
-        while j > 0 and arr[j] < arr[j -1]: 
-            arr[j], arr[j - 1] = arr[j - 1], arr[j] 
-            j -= 1
-            
+    # for every number in the array to 0
+    for i in range(0, len(arr)):
+        # When the number is above zero and the number before it is less, its in the right spot.
+        while i > 0 and arr[i] < arr[i - 1]:
+            # If not swap them.
+            arr[i], arr[i - 1] = arr[i - 1], arr[i]
+            # Check out the spot below the current number.
+            i -= 1
+    # return the array        
     return arr
 
+# Removes duplicates from list
+    # for i in range(len(arr) - 1):
+    #     for i in range(len(arr) - 1 - i):
+    #         if arr[i] > arr[i + 1]:
+    #             arr[i + 1], arr[i] = arr[i], arr[i + 1]
+    #         elif arr[i] == arr[i + 1]:
+    #             del arr[i]
+
+    # return arr
+
 ### Print Test ############################################
-test = [2, 7, 4, 1, 10, 6, 8, 3, 5, 0, 9]
+test = [2, 7, 4, 1, 1, 10, 6, 6, 8, 3, 5, 0, 9]
 bubble_sort(test)
 for x in test:
     print(x)
